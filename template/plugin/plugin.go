@@ -27,7 +27,7 @@ type plugin struct {
 	param2 string
 }
 
-func (p *plugin) List(ctx context.Context, req *environ.Request) (map[string]string, error) {
+func (p *plugin) List(ctx context.Context, req *environ.Request) ([]*environ.Variable, error) {
 	// TODO replace or remove
 	// we could only expose environment variables to
 	// specific repositories or organizations.
@@ -38,9 +38,17 @@ func (p *plugin) List(ctx context.Context, req *environ.Request) (map[string]str
 	// TODO replace or remove
 	// return a list of static environment variables
 	// this is for demo purposes only.
-	environ := map[string]string{
-		"foo": "bar",
-		"baz": "qux",
+	environ := []*environ.Variable{
+		{
+			Name: "foo",
+			Data: "bar",
+			Mask: false,
+		},
+		{
+			Name: "baz",
+			Data: "qux",
+			Mask: false,
+		},
 	}
 
 	return environ, nil
