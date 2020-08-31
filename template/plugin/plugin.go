@@ -30,7 +30,8 @@ type plugin struct {
 func (p *plugin) List(ctx context.Context, req *environ.Request) ([]*environ.Variable, error) {
 	// TODO replace or remove
 	// we could only expose environment variables to
-	// specific repositories or organizations.
+	// specific repositories or organizations or branches
+	// or users or whatever ...
 	if req.Repo.Namespace != p.param1 {
 		return nil, nil
 	}
