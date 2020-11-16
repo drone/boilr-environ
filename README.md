@@ -3,8 +3,7 @@
 This is a [boilr template](https://github.com/tmrts/boilr) for creating an environment variable extension. Use an environment variable extension to provide custom environment variables to your pipelines. Get started by cloning the project and installing the template:
 
 ```console
-$ cd boilr-environ
-$ boilr template save . drone-environ -f
+$ boilr template download drone/boilr-environ drone-environ
 ```
 
 create a project in directory my-environ:
